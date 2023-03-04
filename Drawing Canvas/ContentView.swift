@@ -12,38 +12,37 @@ struct ContentView: View {
 	@State private var particleSystem = ParticleSystem()
 	
     var body: some View {
-		TimelineView(.animation) { timeline in
-			Canvas { ctx, size in
-				let timelineDate = timeline.date.timeIntervalSinceReferenceDate
-				particleSystem.update(date: timelineDate)
-				
-				ctx.blendMode = .plusLighter
-				ctx.addFilter(.blur(radius: 10))
-				
-				for particle in particleSystem.particles {
-					ctx.opacity = particle.deathDate - timelineDate
+		LinearGradient(colors: [.red, .indigo], startPoint: .top, endPoint: .bottom).mask({ 
+			TimelineView(.animation) { timeline in
+				Canvas { ctx, size in
+					let timelineDate = timeline.date.timeIntervalSinceReferenceDate
+					particleSystem.update(date: timelineDate, size: size)
 					
-					ctx.fill(
-						Circle()
-							.path(
-								in: CGRect(
-									x: particle.position.x - 16, 
-									y: particle.position.y - 16, 
-									width: 32, 
-									height: 32
-								)
-							), 
-						with: .color(.cyan)
-					)
+					ctx.addFilter(.alphaThreshold(min: 0.5, color: .white))
+					ctx.addFilter(.blur(radius: 10))
+					
+					ctx.drawLayer { ctx in
+						for particle in particleSystem.particles {
+							ctx.opacity = particle.deathDate - timelineDate
+							
+							ctx.fill(
+								Circle()
+									.path(
+										in: CGRect(
+											x: particle.x, 
+											y: particle.y, 
+											width: 32, 
+											height: 32
+										)
+									), 
+								with: .color(.white)
+							)
+						}
+					}
 				}
 			}
-		}
-		.gesture(
-			DragGesture(minimumDistance: 0)
-				.onChanged { drag in
-					particleSystem.position = drag.location
-				}
-		)
+			
+		})
 		.ignoresSafeArea()
 		.background(.black)
     }

@@ -7,9 +7,19 @@
 
 import SwiftUI
 
-struct Particle {
+class Particle {
 	
-	let position: CGPoint
-	let deathDate = Date.now.timeIntervalSinceReferenceDate + 1
+	var x: Double
+	var y: Double
+	let xSpeed: Double
+	let ySpeed: Double
+	let deathDate = Date.now.timeIntervalSinceReferenceDate + 2
+	
+	init(x: Double, y: Double, xSpeed: Double, ySpeed: Double) {
+		self.x = x
+		self.y = y
+		self.xSpeed = xSpeed
+		self.ySpeed = ySpeed
+	}
 	
 }
