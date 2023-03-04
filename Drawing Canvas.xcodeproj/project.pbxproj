@@ -11,6 +11,8 @@
 		114B9FEB29B3E50500FE3CAB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B9FEA29B3E50500FE3CAB /* ContentView.swift */; };
 		114B9FED29B3E50700FE3CAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114B9FEC29B3E50700FE3CAB /* Assets.xcassets */; };
 		114B9FF029B3E50700FE3CAB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 114B9FEF29B3E50700FE3CAB /* Preview Assets.xcassets */; };
+		114B9FF729B3E66500FE3CAB /* Particle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B9FF629B3E66500FE3CAB /* Particle.swift */; };
+		114B9FF929B3E76C00FE3CAB /* ParticleSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 114B9FF829B3E76C00FE3CAB /* ParticleSystem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		114B9FEA29B3E50500FE3CAB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		114B9FEC29B3E50700FE3CAB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		114B9FEF29B3E50700FE3CAB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		114B9FF629B3E66500FE3CAB /* Particle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Particle.swift; sourceTree = "<group>"; };
+		114B9FF829B3E76C00FE3CAB /* ParticleSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticleSystem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 				114B9FEA29B3E50500FE3CAB /* ContentView.swift */,
 				114B9FEC29B3E50700FE3CAB /* Assets.xcassets */,
 				114B9FEE29B3E50700FE3CAB /* Preview Content */,
+				114B9FF629B3E66500FE3CAB /* Particle.swift */,
+				114B9FF829B3E76C00FE3CAB /* ParticleSystem.swift */,
 			);
 			path = "Drawing Canvas";
 			sourceTree = "<group>";
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				114B9FF929B3E76C00FE3CAB /* ParticleSystem.swift in Sources */,
 				114B9FEB29B3E50500FE3CAB /* ContentView.swift in Sources */,
+				114B9FF729B3E66500FE3CAB /* Particle.swift in Sources */,
 				114B9FE929B3E50500FE3CAB /* Drawing_CanvasApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
