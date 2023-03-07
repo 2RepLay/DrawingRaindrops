@@ -11,8 +11,8 @@ class Particle {
 	
 	var x: Double
 	var y: Double
-	let xSpeed: Double
-	let ySpeed: Double
+	var xSpeed: Double
+	var ySpeed: Double
 	let deathDate = Date.now.timeIntervalSinceReferenceDate + 2
 	
 	init(x: Double, y: Double, xSpeed: Double, ySpeed: Double) {
